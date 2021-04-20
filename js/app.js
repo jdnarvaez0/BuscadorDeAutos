@@ -75,6 +75,7 @@ function mostrarAutos(autos) {
     autos.forEach(auto => {
         const {marca, modelo, year, puertas, transmision, precio, color} = auto;
         const autoHTML = document.createElement('p');
+        
 
         autoHTML.textContent = `
             ${marca} ${modelo} - ${year} - ${puertas} Puertas - Transmision: ${transmision} - Precio: ${precio}
@@ -105,12 +106,9 @@ function generarAnio() {
 }
 
 function filtraAutos(){
-    const resultado = autos.filter(filtrarMarca).filter(filtrarYear).filter(filtratMinimo).filter(filtrarMaximo).filter(filtrarPuerta).filter(filtrarTransmision).filter(filtrarColor);
-
-
-    
+    const resultado = autos.filter(filtrarMarca).filter(filtrarYear).filter(filtratMinimo).filter(
+        filtrarMaximo).filter(filtrarPuerta).filter(filtrarTransmision).filter(filtrarColor);
    
-
     if (resultado.length) {
         mostrarAutos(resultado);
     }else{
@@ -123,8 +121,8 @@ function noResultado() {
     limpiarHTML();
 
     const noResultado = document.createElement('div');
-    noResultado.classList.add('aleta', 'error');
-    noResultado.textContent = 'No hay resultados de busqueda';
+    noResultado.classList.add('blockquote', 'blockquote-reverse', 'text-danger', );
+    noResultado.textContent = 'NO HAY RESULTADOS DE BUSQUEDA';
     resultado.appendChild(noResultado);
 }
 
